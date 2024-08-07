@@ -26,6 +26,7 @@ jobs:
           scheme: ${{ 'default' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
+          pod install
           xcodebuild -scheme ofcwork -workspace ofcwork.xcworkspace -archivePath ofcwork.xcarchive -derivedDataPath .  -configuration "Release" CODE_SIGN_IDENTITY="" CODE_SIGNING_ALLOWED=NO archive
       - name: Test
         env:
